@@ -1,77 +1,102 @@
+"""
+Questons 1:
+========================================================================================================
+Give a list of numbers, write a function with lambda and filter to return the even numbers of the list.
+Note: This function should use Lambda.
+Example 1:
+========================================
+Input: [1, 2, 3, 4, 5, 6]
+Output: [2, 4, 6]
+Example 2:
+========================================
+Input:[10,10,10,20,21,20]
+Output: [10, 10, 10, 20, 20]
+Example 3:
+========================================
+Input: []
+Output: []
+"""
+def filter_even(lst):
+    #Your code here, should use lambda and filter
+    
+    return ans
 
-import math
+"""
+Questons 2:
+========================================================================================================
+Give a list of numbers, write a function with lambda and reduce to return the product(multiple result) of numbers.
+Note: This function should use Lambda.
+Example 1:
+========================================
+Input: [1, 2, 3, 4, 5, 6]
+Output: 720
+Example 2:
+========================================
+Input:[7,8,9,10]
+Output: 5040
+Example 3:
+========================================
+Input: [100,200,300]
+Output: 6000000
+"""
+from functools import reduce
+def reduce_function(lst):
+    #Your code here, should use lambda and reduce
+    
+    return ans
 
-def calculate():
-    a=3
-    b=4
+"""
+Questons 3:
+========================================================================================================
+Give a string number as Num, representing a learger number. An integer is considered a great integer if it satisfies all of the following conditions:
+1.The integer is a substring of length 4 of Num.
+2.The integer consists of a unique number repeated 4 times.
+Returns the largest great integer as a string. Returns an empty string "" if no such integer exists.
+Example 1:
+========================================
+Input: "8999921111116"
+Output: "9999"
+Explanation: There are two great integers in Num: "9999" and "1111". "9999" is the largest one.
+Example 2:
+========================================
+Input:"6498888132"
+Output: "8888"
+Explanation: "8888" is the only great integer.
+Example 3:
+========================================
+Input: "89454648126"
+Output: ""
+Explanation: There is no integer of length 4 consisting of only one unique digit. Therefore, great integers do not exist.
+"""
 
-    # Add a and b then assign the sum to variable c
+def largestGoodInteger(Num):
 
-    # Subtract c by 1 then divide this result by 5.0 and assign this final result to the variable q
+    return ans
 
-    # Assign the type of the variable q to a new variable type_q
+"""
+Questons 4:
+========================================================================================================
+Given an integer array nums of length n, please return the number closest to 0 in nums. 
+If there are multiple answers, please return the maximum value among them.
+Example 1:
+========================================
+Input: [-4,-2,1,4,8]
+Output: 1
+Explanation: 
+The distance from -4 to 0 is |-4| = 4 .
+The distance from -2 to 0 is |-2| = 2 .
+The distance from 1 to 0 is |1| = 1 .
+The distance from 4 to 0 is |4| = 4 .
+The distance from 8 to 0 is |8| = 8 .
+So, the closest number to 0 in the array is 1 .
+Example 2:
+========================================
+Input: [2,-1,1]
+Output: 1
+Explanation: Both 1 and -1 are the closest numbers to 0, so the larger value 1 is returned.
+"""
 
-    return c,q,type_q
+def findClosestNumber(nums):
 
+    return ans
 
-def string_formating():
-
-    math_pi = 3.141592653589793
-
-    # Format the variable math_pi as a string with 6 decimal places and assign it to variable string_pi
-
-    ####
-    large_number=100000000
-
-    # Format large_number to be a string and assign it to the variable comma_string. The contents of comma_string
-    # should have the appropriate commas. (Comma separator). Example; 1000 should be "1,000"
-
-    # Format large_number to be a string and assign it to the variable exp_string. The contents of exp_string
-    # should be exponent notation (with two decimal places).
-
-    ####
-    small_number =13
-
-    # Format small_number to be a string and assign it to the variable center_string. 
-    # The format for center_string should be Center aligned with a width of 10.
-
-    # Format small_number to be a string and assign it to the variable left_string.
-    # The format for left_string should be Left aligned with a width of 10.
-
-    return string_pi,comma_string,exp_string,center_string,left_string
-
-
-def build_in():
-    #### Use the math library for the following questions.
-    # Assign the number pi to the variable math_pi
-
-    # Assign the Euler's number (e) to the variable math_e
-
-    # Assign the sine of pi (sin(pi)) to the variable sin_pi
-
-    # Assign the square root of 2 to the variable square_root_2
-
-    # Assign the absolute value of -2 to the variable abs_2
-    # (Please use the built-in Python function for absolute value)
-
-    return math_pi,math_e,sin_pi,square_root_2,abs_2
-
-
-
-def set_op():
-    S1 = {1, 2, 3, 4}
-    S2 = {3, 4, 5, 6}
-
-    # Add 0 to set S1
-
-    # Assign the union of S1 and S2 to the variable union_s
-
-    # Assign the sum of all items in union_s to the variable sum_s
-
-    return S1,union_s,sum_s
-
-
-calculate()
-string_formating()
-build_in()
-set_op()
