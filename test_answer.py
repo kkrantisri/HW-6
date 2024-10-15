@@ -1,5 +1,3 @@
-import math
-
 import pytest
 import answer
 
@@ -20,117 +18,128 @@ class TestAnswer():
 
         print(f"Score:{(cls.__correct__/cls.__total__)*100}%")
 
-
-    def test_calculate_c(self):
+    def test_Q1_normal_list_1(self):
         TestAnswer.__total__ += 1
-        c,q,type_q = answer.calculate()
-        assert (c == 7)
+        test_list = [1, 2, 3, 4, 5, 6]
+        output = answer.filter_even(test_list)
+        assert(output == [2, 4, 6])
         TestAnswer.__correct__ += 1
 
-    def test_calculate_q(self):
+    def test_Q1_normal_list_2(self):
         TestAnswer.__total__ += 1
-        c,q,type_q = answer.calculate()
-        assert (q == (7-1)/5.0)
+        test_list = [10, 10, 10, 20, 21, 20]
+        output = answer.filter_even(test_list)
+        assert(output == [10, 10, 10, 20, 20])
         TestAnswer.__correct__ += 1
 
-    def test_calculate_type(self):
+    def test_Q1_normal_list_3(self):
         TestAnswer.__total__ += 1
-        c,q,type_q = answer.calculate()
-        assert (type_q == type((7-1)/5.0))
+        test_list = [20,21,22,23]
+        output = answer.filter_even(test_list)
+        assert(output == [20, 22])
         TestAnswer.__correct__ += 1
 
-    def test_format_pi(self):
+    def test_Q1_empty_list(self):
         TestAnswer.__total__ += 1
-        string_pi,comma_string,exp_string,center_string,left_string = answer.string_formating()
-        assert (string_pi == '{0:.6f}'.format(3.141592653589793))
-
-        TestAnswer.__correct__ += 1
-    def test_format_comma(self):
-        TestAnswer.__total__ += 1
-        string_pi,comma_string,exp_string,center_string,left_string = answer.string_formating()
-        assert (comma_string == "{:,}".format(100000000))
-
-        TestAnswer.__correct__ += 1
-    def test_format_exp(self):
-        TestAnswer.__total__ += 1
-        string_pi,comma_string,exp_string,center_string,left_string = answer.string_formating()
-        assert (exp_string == "{:.2e}".format(100000000))
-
+        test_list = []
+        output = answer.filter_even(test_list)
+        assert(output == [])
         TestAnswer.__correct__ += 1
 
-    def test_format_center(self):
+    def test_Q2_normal_list_1(self):
         TestAnswer.__total__ += 1
-        string_pi,comma_string,exp_string,center_string,left_string = answer.string_formating()
-        assert (center_string == "{:^10d}".format(13))
-
+        test_list = [1, 2, 3, 4, 5, 6]
+        output = answer.reduce_function(test_list)
+        assert(output == 720)
         TestAnswer.__correct__ += 1
 
-    def test_format_left(self):
+    def test_Q2_normal_list_2(self):
         TestAnswer.__total__ += 1
-        string_pi, comma_string, exp_string, center_string, left_string = answer.string_formating()
-        assert (left_string == "{:<10}".format(13))
-
+        test_list = [7,8,9,10]
+        output = answer.reduce_function(test_list)
+        assert(output == 5040)
         TestAnswer.__correct__ += 1
 
-    def test_build_in_left(self):
+    def test_Q2_normal_list_3(self):
         TestAnswer.__total__ += 1
-        math_pi,math_e,sin_pi,square_root_2,abs_2 = answer.build_in()
-        assert (math_pi == math.pi)
-
+        test_list = [100,200,300]
+        output = answer.reduce_function(test_list)
+        assert(output == 6000000)
         TestAnswer.__correct__ += 1
 
-    def test_build_in_pi(self):
+    def test_Q2_normal_list_4(self):
         TestAnswer.__total__ += 1
-        math_pi,math_e,sin_pi,square_root_2,abs_2 = answer.build_in()
-        assert (math_pi == math.pi)
-
+        test_list = [100,200,3,300]
+        output = answer.reduce_function(test_list)
+        assert(output == 18000000)
         TestAnswer.__correct__ += 1
 
-    def test_build_in_e(self):
+    def test_Q2_normal_list_5(self):
         TestAnswer.__total__ += 1
-        math_pi,math_e,sin_pi,square_root_2,abs_2 = answer.build_in()
-        assert (math_e == math.e)
-
+        test_list = [1]
+        output = answer.reduce_function(test_list)
+        assert(output == 1)
         TestAnswer.__correct__ += 1
 
-    def test_build_in_sin_pi(self):
+    def test_Q3_normal_list_1(self):
         TestAnswer.__total__ += 1
-        math_pi,math_e,sin_pi,square_root_2,abs_2 = answer.build_in()
-        assert (sin_pi == math.sin(math.pi))
-
+        test_list = "8999921111116"
+        output = answer.largestGoodInteger(test_list)
+        assert(output == '9999')
         TestAnswer.__correct__ += 1
 
-    def test_build_in_sqrt(self):
+    def test_Q3_normal_list_2(self):
         TestAnswer.__total__ += 1
-        math_pi,math_e,sin_pi,square_root_2,abs_2 = answer.build_in()
-        assert (square_root_2 == math.sqrt(2))
-
+        test_list = "6498888132"
+        output = answer.largestGoodInteger(test_list)
+        assert(output == '8888')
         TestAnswer.__correct__ += 1
 
-    def test_build_in_abs(self):
+    def test_Q3_normal_list_3(self):
         TestAnswer.__total__ += 1
-        math_pi,math_e,sin_pi,square_root_2,abs_2 = answer.build_in()
-        assert (abs_2 == abs(-2))
-
+        test_list = "89454648126666"
+        output = answer.largestGoodInteger(test_list)
+        assert(output == '6666')
         TestAnswer.__correct__ += 1
 
-    def test_set_add(self):
+    def test_Q3_empty_output(self):
         TestAnswer.__total__ += 1
-        S1,union_s,sum_s = answer.set_op()
-        assert (S1 == {0, 1, 2, 3, 4})
-
+        test_list = "89454648126"
+        output = answer.largestGoodInteger(test_list)
+        assert(output == '')
         TestAnswer.__correct__ += 1
 
-    def test_set_union(self):
+    def test_Q3_empty_list(self):
         TestAnswer.__total__ += 1
-        S1,union_s,sum_s = answer.set_op()
-        assert (union_s == {0, 1, 2, 3, 4, 5, 6})
-
+        test_list = ""
+        output = answer.largestGoodInteger(test_list)
+        assert(output == '')
         TestAnswer.__correct__ += 1
 
-    def test_set_sum(self):
+    def test_Q4_normal_list_1(self):
         TestAnswer.__total__ += 1
-        S1, union_s, sum_s = answer.set_op()
-        assert (sum_s == sum({0, 1, 2, 3, 4, 5, 6}))
+        test_list = [-4,-2,1,4,8]
+        output = answer.findClosestNumber(test_list)
+        assert(output == 1)
+        TestAnswer.__correct__ += 1
 
+    def test_Q4_normal_list_2(self):
+        TestAnswer.__total__ += 1
+        test_list = [2,-1,1]
+        output = answer.findClosestNumber(test_list)
+        assert(output == 1)
+        TestAnswer.__correct__ += 1
+
+    def test_Q4_normal_list_3(self):
+        TestAnswer.__total__ += 1
+        test_list = [2,-1,2]
+        output = answer.findClosestNumber(test_list)
+        assert(output == -1)
+        TestAnswer.__correct__ += 1
+
+    def test_Q4_normal_list_4(self):
+        TestAnswer.__total__ += 1
+        test_list = [0]
+        output = answer.findClosestNumber(test_list)
+        assert(output == 0)
         TestAnswer.__correct__ += 1
