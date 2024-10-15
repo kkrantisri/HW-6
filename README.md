@@ -1,4 +1,4 @@
-# Assignment 3
+# Assignment 6
 
 You should edit the "answer.py" file and answer the questions.
 
